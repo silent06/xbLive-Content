@@ -1,0 +1,22 @@
+<XuiCanvas version="000c">
+<Properties>
+<Id>XuiCanvas</Id>
+<Width>96</Width>
+<Height>32</Height>
+</Properties><XuiScene>
+<Properties>
+<Id>XuiScene1</Id>
+<Width>38</Width>
+<Height>14</Height>
+</Properties>
+<XuiImage>
+<Properties>
+<Id>battery</Id>
+<Width>38</Width>
+<Height>14</Height>
+<SizeMode>16</SizeMode>
+<ImagePath>hud\ico_32x_Ctrl-Battery3.png</ImagePath>
+</Properties>
+</XuiImage>
+</XuiScene>
+</XuiCanvas>

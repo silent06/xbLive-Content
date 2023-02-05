@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="CPP">
+      <UniqueIdentifier>{32ab0496-3265-4592-af9c-1a9085404a34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H">
+      <UniqueIdentifier>{6a7c4538-daaa-4b67-8c12-8a3a026c9f10}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>CPP</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>H</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

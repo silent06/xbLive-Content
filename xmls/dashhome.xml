@@ -1,0 +1,1290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+  <id>dashhome</id>
+  <culture>en-US</culture>
+  <sysexts>
+    <sysext>
+      <name>luaext.xex</name>
+      <tag>LUAXZP</tag>
+    </sysext>
+  </sysexts>
+  <defaultchannelid>HOME</defaultchannelid>
+  <webreportingsampling>100</webreportingsampling>
+  <infomode>Gamertag</infomode>
+  <description>DashHome</description>
+  <surface>yes</surface>
+    <channel>
+      <id>xbLive</id>
+        <channeldef layouttemplate="epix://template6hd.xur">
+        <description>xbLive</description>
+        <slotgroup>
+      <slot>
+          <name>Check Time</name>
+          <vui>
+              <phrase>Check Time</phrase>
+              <responsetype>RequestYesNo</responsetype>
+              <message>Check Time</message>
+          </vui>
+          <description>Check Time</description>
+          <rating>267242991</rating>
+          <deepasset>
+              <format>EpixScene</format>
+              <path>EsLiveTile</path>
+              <param>common://ico_64x_clock.png</param>
+          </deepasset>
+          <onclick>
+              <button>A</button>
+              <helptext>Select</helptext>
+              <action>EpixCmd</action>
+              <cmd>EcNavToURI</cmd>
+              <param>CheckTime</param>
+          </onclick>
+      </slot>
+  </slotgroup>
+
+    <slotgroup>
+      <slot>
+          <name>Redeem Token</name>
+          <vui>
+              <phrase>Redeem Token</phrase>
+              <responsetype>RequestYesNo</responsetype>
+              <message>Redeem Token</message>
+          </vui>
+          <description>Redeem Token</description>
+          <rating>267242991</rating>
+          <deepasset>
+              <format>EpixScene</format>
+              <path>EsLiveTile</path>
+              <param>common://ico_64x_Gift.png</param>
+          </deepasset>
+          <onclick>
+              <button>A</button>
+              <helptext>Select</helptext>
+              <action>EpixCmd</action>
+              <cmd>EcNavToURI</cmd>
+              <param>RedeemToken</param>
+          </onclick>
+      </slot>
+  </slotgroup>
+
+    <slotgroup>
+      <slot>
+          <name>Check KV Life</name>
+          <vui>
+              <phrase>Check KV Life</phrase>
+              <responsetype>RequestYesNo</responsetype>
+              <message>Check KV Life</message>
+          </vui>
+          <description>Check KV Life</description>
+          <rating>267242991</rating>
+          <deepasset>
+              <format>EpixScene</format>
+              <path>EsLiveTile</path>
+              <param>common://ico_64x_NewReleases.png</param>
+          </deepasset>
+          <onclick>
+              <button>A</button>
+              <helptext>Select</helptext>
+              <action>EpixCmd</action>
+              <cmd>EcNavToURI</cmd>
+              <param>CheckKVLife</param>
+          </onclick>
+      </slot>
+  </slotgroup>
+
+    <slotgroup>
+      <slot>
+          <name>Change Log</name>
+          <vui>
+              <phrase>Change Log</phrase>
+              <responsetype>RequestYesNo</responsetype>
+              <message>Change Log</message>
+          </vui>
+          <description>Change Log</description>
+          <rating>267242991</rating>
+          <deepasset>
+              <format>EpixScene</format>
+              <path>EsLiveTile</path>
+              <param>common://ico_32x_check.png</param>
+          </deepasset>
+          <onclick>
+              <button>A</button>
+              <helptext>Select</helptext>
+              <action>EpixCmd</action>
+              <cmd>EcNavToURI</cmd>
+              <param>ChangeLog</param>
+          </onclick>
+      </slot>
+  </slotgroup>
+
+   <slotgroup>
+      <slot>
+          <name>Refresh Server KV</name>
+          <vui>
+              <phrase>Refresh Server KV</phrase>
+              <responsetype>RequestYesNo</responsetype>
+              <message>Refresh Server KV</message>
+          </vui>
+          <description>Refresh Server KV</description>
+          <rating>267242991</rating>
+          <deepasset>
+              <format>EpixScene</format>
+              <path>EsLiveTile</path>
+              <param>common://ico_64x_network.png</param>
+          </deepasset>
+          <onclick>
+              <button>A</button>
+              <helptext>Select</helptext>
+              <action>EpixCmd</action>
+              <cmd>EcNavToURI</cmd>
+              <param>xbLive_ResetServerKeyvault</param>
+          </onclick>
+      </slot>
+  </slotgroup>
+</channeldef>
+  </channel>
+  <channel>
+    <id>HOME</id>
+    <channeldef layouttemplate="epix://template1hd.xur">
+      <description>home</description>
+      <type>online</type>
+      <vui>
+        <phrase>home</phrase>
+        <responsetype>Maintain</responsetype>
+        <message>Launching ...</message>
+      </vui>
+      <slotgroup>
+        <slot>
+          <definitionpath>slot://DiscInTray</definitionpath>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>HD:GDL:BDE:GWG</name>
+          <vui>
+            <visiblephrase>Games with Gold</visiblephrase>
+            <phrase>Games with Gold</phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching New Games with Gold...</message>
+          </vui>
+          <description>New Games with Gold</description>
+          <rating>267242991</rating>
+          <shallowimg>http://root.silent.hosted.nfoservers.com/assets/sample/index.jpg</shallowimg>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToEpixManifest</cmd>
+            <param>exl-getmorewithgold.xml</param>
+            <param2></param2>
+          </onclick>
+        </slot>
+        <slot>
+          <name>HEG:G:GDP:NBA2K170502</name>
+          <vui>
+            <visiblephrase>NBA 2K17</visiblephrase>
+            <phrase>NBA 2K17</phrase>
+            <phrase>N B A 2 K 17</phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching NBA 2K17...</message>
+          </vui>
+          <description>NBA 2K17</description>
+          <rating>267242991</rating>
+          <shallowimg>http://root.silent.hosted.nfoservers.com/assets/sample/index.jpg</shallowimg>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToURI</cmd>
+            <param>gamedetails:66acd000-77fe-1000-9115-d802545408bd;</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>Search</name>
+          <vui>
+            <visiblephrase>My Pins</visiblephrase>
+            <phrase>My Pins</phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching Search...</message>
+          </vui>
+          <description>Search</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_search.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToURI</cmd>
+            <param>search:</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>MyPins</name>
+          <vui>
+            <visiblephrase>My Pins</visiblephrase>
+            <phrase>My Pins</phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching My Pins...</message>
+          </vui>
+          <description>My Pins</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_overlay_bookmark.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToURI</cmd>
+            <param>userpins:</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>H:SA:BDE:HelpOn3600704</name>
+          <vui>
+            <visiblephrase>Help</visiblephrase>
+            <phrase>Help</phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching Need Help?...</message>
+          </vui>
+          <description>Need Help?</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_gamedemo.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToEpixManifest</cmd>
+            <param>exl-HELP-on-360.xml</param>
+            <param2>Help-on-360-Ch1</param2>
+          </onclick>
+        </slot>
+        <slot>
+          <name>HEG:BrowseApps</name>
+          <description>Browse Apps</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_marketplace.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToUri</cmd>
+            <param>appsmp:_RootTitle=%channel_description%;_Param=[SubscriptionLevel];_MethodName=Browse;_PageSize=25;orderBy=MostPopular;desiredMediaItemTypes=XboxApp;</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>Recent</name>
+          <vui>
+            <visiblephrase>%EvResStr(IDS_SLOT_QUICKPLAY_VUI_DISPLAY_ALT)%</visiblephrase>
+            <phrase>%EvResStr(IDS_SLOT_QUICKPLAY_VUI_PRON)%</phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching %EvResStr(IDS_SLOT_QUICKPLAY_VUI_DISPLAY)%...</message>
+          </vui>
+          <description>%EvResStr(IDS_SLOT_QUICKPLAY_VUI_DISPLAY)%</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_clock.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToURI</cmd>
+            <param>contentlibrary:_SlotCount=10;SortOrder=2;_Launch=true;_Quickplay</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>MSMoviesTV</name>
+          <vui>
+            <visiblephrase>Microsoft        Movies &amp; TV</visiblephrase>
+            <phrase>Microsoft        Movies &amp; TV</phrase>
+          </vui>
+          <metadata>
+            <property>
+              <name>gradient</name>
+              <value>no</value>
+            </property>
+          </metadata>
+          <description>Microsoft Movies &amp; TV</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_mtv.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToUri</cmd>
+            <param>zune:VideoHomePage</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>MyApps</name>
+          <description>My Apps</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_apps.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToUri</cmd>
+            <param>applibrary:_RootTitle=%slot_description%;</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>MyGames</name>
+          <vui>
+            <visiblephrase>My Games</visiblephrase>
+            <phrase>My Games</phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching My Games...</message>
+          </vui>
+          <description>My Games</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_controller.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToURI</cmd>
+            <param>gameslibrary:_RootTitle=%slot_description%;PackageType=1</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+    </channeldef>
+  </channel>
+  <channel>
+    <id>SOCIAL</id>
+    <description>social</description>
+    <definitionpath>channel://dash.social.lex/avatareditor:storelist:storefront</definitionpath>
+  </channel>
+  <channel>
+    <id>GAMES</id>
+    <metadata>
+      <property>
+        <name>SearchContext</name>
+        <value>XboxGameItem</value>
+      </property>
+      <property>
+        <name>VuiContext</name>
+        <value>game</value>
+      </property>
+    </metadata>
+    <channeldef layouttemplate="epix://template18hd.xur">
+      <description>games</description>
+      <type>online</type>
+      <vui>
+        <responsetype>Maintain</responsetype>
+        <message>Launching ...</message>
+      </vui>
+      <slotgroup>
+        <slot>
+          <name>Slot 1 - My Games</name>
+          <vui>
+            <visiblephrase>My Games</visiblephrase>
+            <phrase>My Games</phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching My Games...</message>
+          </vui>
+          <description>My Games</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_controller.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToURI</cmd>
+            <param>gameslibrary:_RootTitle=%slot_description%;PackageType=1</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>Add Ons</name>
+          <vui>
+            <visiblephrase>Add Ons</visiblephrase>
+            <phrase>My Games</phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching Add Ons...</message>
+          </vui>
+          <description>Add Ons</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_gameaddon.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToURI</cmd>
+            <param>gamesmp:_RootTitle=%slot_description%;_MethodName=FindGames;_SlotType=DLC;_SlotCount=100;_Param=[UserTypes,RatingIds];DetailView=3;CategoryIDs=3027;OrderBy=3;OrderDirection=2;ImageFormats=4;ImageSizes=23;OfferFilterLevel=2;MediaTypes=[18]</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>GD:GDP:F:Minecraft Story Mode 5.24</name>
+          <vui>
+            <visiblephrase>Minecraft Story Mode Ep. 1</visiblephrase>
+            <phrase>Minecraft Story Mode </phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching Minecraft: Story Mode...</message>
+          </vui>
+          <description>Minecraft: Story Mode</description>
+          <rating>20</rating>
+          <shallowimg>http://compass.xboxlive.com/assets/be/43/be43d72a-5c12-4d73-bd60-8139bb68f087.jpg?n=slot-Minecraft-Ep05-01-352x264.jpg</shallowimg>
+          <condition>EcoIsFamily()</condition>
+          <condition>EcoLiveTier(none)</condition>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToURI</cmd>
+            <param>gamedetails:66acd000-77fe-1000-9115-d8025841149e;</param>
+          </onclick>
+        </slot>
+        <slot>
+          <name>GD:GDP:CODMW040119</name>
+          <vui>
+            <visiblephrase>Modern Warfare 3</visiblephrase>
+            <phrase>Modern Warfare 3</phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching Call of Duty: Modern Warfare 3...</message>
+          </vui>
+          <description>Call of Duty: Modern Warfare 3</description>
+          <rating>40</rating>
+          <shallowimg>http://compass.xboxlive.com/assets/8c/da/8cda7ae5-cacc-4c29-91ac-9435813b2548.jpg?n=slot-ModernWarfare-dm-04-352x264.jpg</shallowimg>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToURI</cmd>
+            <param>gamedetails:66acd000-77fe-1000-9115-d802415608cb;</param>
+          </onclick>
+        </slot>
+        <slot>
+          <name>GD:GDP:FB:Minecraft Story Mode 05.24</name>
+          <vui>
+            <visiblephrase>Minecraft Story Mode Ep. 1</visiblephrase>
+            <phrase>Minecraft Story Mode </phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching Minecraft: Story Mode...</message>
+          </vui>
+          <description>Minecraft: Story Mode</description>
+          <rating>20</rating>
+          <shallowimg>http://compass.xboxlive.com/assets/be/43/be43d72a-5c12-4d73-bd60-8139bb68f087.jpg?n=slot-Minecraft-Ep05-01-352x264.jpg</shallowimg>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToURI</cmd>
+            <param>gamedetails:66acd000-77fe-1000-9115-d8025841149e;</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>Slot 4 - Browse Games</name>
+          <vui>
+            <visiblephrase>Browse Games</visiblephrase>
+            <phrase>Browse Games</phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching Browse Games...</message>
+          </vui>
+          <description>Browse Games</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_marketplace.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToEpixManifest</cmd>
+            <param>exl-GamesMarketplace.xml</param>
+            <param2></param2>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>Slot 5 - Demos</name>
+          <vui>
+            <visiblephrase>Demos</visiblephrase>
+            <phrase>Demos</phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching Demos...</message>
+          </vui>
+          <description>Demos</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_gamedemo.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToURI</cmd>
+            <param>gamesmp:_RootTitle=%slot_description%;_MethodName=FindGames;_SlotType=DLC;_Param=[UserTypes,RatingIds];DetailView=3;OrderBy=3;OrderDirection=2;ImageFormats=4;ImageSizes=23;OfferFilterLevel=2;MediaTypes=[19];_SlotCount=100</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>Slot 6 - Search Games</name>
+          <vui>
+            <responsetype>Maintain</responsetype>
+            <message>Launching Search Games...</message>
+          </vui>
+          <description>Search Games</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_search.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToURI</cmd>
+            <param>search:filter=XboxGameItem</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>Slot 7 - A-Z All</name>
+          <vui>
+            <visiblephrase>A - Z</visiblephrase>
+            <phrase>A - Z</phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching A - Z...</message>
+          </vui>
+          <description>A - Z</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_settingspreferences.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToPamApp</cmd>
+            <param>BuiltIn.Hub.xzp</param>
+            <param2>Provider=Dash.MP.ContentExplorer.lex;Args="_SlotType=Letter;_SceneType=LetterSlotSmallScene;_RootTitle=%slot_description%;_LetterJumpRootTitle=%slot_description%: {1};Slot1='Text=A;Filter=A';Slot2='Text=B;Filter=B';Slot3='Text=C;Filter=C';Slot4='Text=D;Filter=D';Slot5='Text=E;Filter=E';Slot6='Text=F;Filter=F';Slot7='Text=G;Filter=G';Slot8='Text=H;Filter=H';Slot9='Text=I;Filter=I';Slot10='Text=J;Filter=J';Slot11='Text=K;Filter=K';Slot12='Text=L;Filter=L';Slot13='Text=M;Filter=M';Slot14='Text=N;Fi</param2>
+            <param2>lter=N';Slot15='Text=O;Filter=O';Slot16='Text=P;Filter=P';Slot17='Text=Q;Filter=Q';Slot18='Text=R;Filter=R';Slot19='Text=S;Filter=S';Slot20='Text=T;Filter=T';Slot21='Text=U;Filter=U';Slot22='Text=V;Filter=V';Slot23='Text=W;Filter=W';Slot24='Text=X;Filter=X';Slot25='Text=Y;Filter=Y';Slot26='Text=Z;Filter=Z';Slot27='Text=0-9;Filter=[0,1,2,3,4,5,6,7,8,9]';Query=';_MethodName=FindGames;_Param=[UserTypes,RatingIds];DetailView=3;CategoryIds=[3027];OrderBy=1;OrderDirection=1;ImageFormats=4;ImageSizes=2</param2>
+            <param2>3;OfferFilterLevel=2;MediaTypes=[23,1,21];OfferTargetMediaTypes=[23,1,21];'"</param2>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>GD:GDP:Minecraft 12.06</name>
+          <vui>
+            <visiblephrase>Minecraft</visiblephrase>
+            <phrase>minecraft</phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching Minecraft...</message>
+          </vui>
+          <description>Minecraft</description>
+          <rating>20</rating>
+          <shallowimg>http://compass.xboxlive.com/assets/b3/76/b3764e77-ac99-4d8b-ae8b-b56f24d6af3b.jpg?n=slot-Minecraft-01-174x130.jpg</shallowimg>
+          <condition>EcoIsFamily()</condition>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToURI</cmd>
+            <param>gamedetails:66acd000-77fe-1000-9115-d802584111f7;</param>
+          </onclick>
+        </slot>
+        <slot>
+          <name>GD:GDP:Forza 02.21</name>
+          <vui>
+            <visiblephrase>Forza Horizon 2</visiblephrase>
+            <phrase>Forza Horizon 2</phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching Forza Horizon 2...</message>
+          </vui>
+          <description>Forza Horizon 2</description>
+          <rating>267242991</rating>
+          <shallowimg>http://compass.xboxlive.com/assets/48/4d/484d7ab0-cb2b-46fe-9ce8-3875d3a7435c.jpg?n=slot-ForzaHorizon2-174x130-01.jpg</shallowimg>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToURI</cmd>
+            <param>gamedetails:66acd000-77fe-1000-9115-d8024d530aa4;</param>
+          </onclick>
+        </slot>
+        <slot>
+          <name>GD:GDP:FB:FIFA 16 May24</name>
+          <vui>
+            <visiblephrase>FIFA 16</visiblephrase>
+            <phrase>FIFA</phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching FIFA 16...</message>
+          </vui>
+          <description>FIFA 16</description>
+          <rating>267242991</rating>
+          <shallowimg>http://compass.xboxlive.com/assets/f4/7a/f47a4aa8-02ef-4081-8f3a-34f9d98fe424.jpg?n=slot-Fifa16-01-174x130.jpg</shallowimg>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToURI</cmd>
+            <param>gamedetails:66acd000-77fe-1000-9115-d802454109ee;</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>GD:GDP:F:Cobalt 5.24</name>
+          <vui>
+            <visiblephrase>Cobalt</visiblephrase>
+            <phrase>Cobalt</phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching Cobalt...</message>
+          </vui>
+          <description>Cobalt</description>
+          <rating>267242991</rating>
+          <shallowimg>http://compass.xboxlive.com/assets/44/ff/44ff20d8-3e50-4620-868f-a27522bc2c9f.jpg?n=slot-Cobalt-dm-01-174x130.jpg</shallowimg>
+          <condition>EcoIsFamily()</condition>
+          <condition>EcoLiveTier(none)</condition>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToURI</cmd>
+            <param>gamedetails:66acd000-77fe-1000-9115-d80258411448;</param>
+          </onclick>
+        </slot>
+        <slot>
+          <name>GD:GDP:GTAV</name>
+          <vui>
+            <visiblephrase>GTA</visiblephrase>
+            <phrase>GTA</phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching GTA V...</message>
+          </vui>
+          <description>GTA V</description>
+          <rating>14005</rating>
+          <shallowimg>http://compass.xboxlive.com/assets/c7/53/c7530faa-81a1-45fe-95a8-e01b44fe64d8.jpg?n=slot-GTAVTrunkArt-174x130-01.jpg</shallowimg>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToURI</cmd>
+            <param>gamedetails:66acd000-77fe-1000-9115-d802545408a7;</param>
+          </onclick>
+        </slot>
+        <slot>
+          <name>GD:GDP:FB:Cobalt 5.24</name>
+          <vui>
+            <visiblephrase>Cobalt</visiblephrase>
+            <phrase>Cobalt</phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching Cobalt...</message>
+          </vui>
+          <description>Cobalt</description>
+          <rating>267242991</rating>
+          <shallowimg>http://compass.xboxlive.com/assets/44/ff/44ff20d8-3e50-4620-868f-a27522bc2c9f.jpg?n=slot-Cobalt-dm-01-174x130.jpg</shallowimg>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToURI</cmd>
+            <param>gamedetails:66acd000-77fe-1000-9115-d80258411448;</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+    </channeldef>
+  </channel>
+  <channel>
+    <id>TV___FILMS</id>
+    <metadata>
+      <property>
+        <name>SearchContext</name>
+        <value>XboxVideoItem</value>
+      </property>
+      <property>
+        <name>VuiContext</name>
+        <value>video</value>
+      </property>
+    </metadata>
+    <channeldef layouttemplate="epix://template18hd.xur">
+      <description>movies &amp; tv</description>
+      <type>online</type>
+      <vui>
+        <responsetype>Maintain</responsetype>
+        <message>Launching ...</message>
+      </vui>
+      <slotgroup>
+        <slot>
+          <name>My Video App</name>
+          <vui>
+            <visiblephrase>My Video Apps </visiblephrase>
+          </vui>
+          <description>My Video Apps</description>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_apps.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToUri</cmd>
+            <param>gameslibrary:_RootTitle=%slot_description%;PackageType=2;Category=12;</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>Zune System Tile</name>
+          <vui>
+            <visiblephrase>Microsoft        Movies &amp; TV</visiblephrase>
+            <phrase>Microsoft        Movies &amp; TV</phrase>
+          </vui>
+          <metadata>
+            <property>
+              <name>gradient</name>
+              <value>no</value>
+            </property>
+          </metadata>
+          <description>Microsoft        Movies &amp; TV</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_mtv.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToUri</cmd>
+            <param>zune:VideoHomePage</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>MyMoviesTVApp</name>
+          <vui>
+            <visiblephrase>Nouveautés Films</visiblephrase>
+            <phrase>Nouveautés Films</phrase>
+            <phrase>Nouveautés Films</phrase>
+          </vui>
+          <description>Watch the Latest Hit Movies</description>
+          <rating>-17957139</rating>
+          <shallowimg>http://compass.xboxlive.com/assets/8a/0e/8a0ecc3c-61e7-40b0-9558-0de007fb5743.png?n=360-MMTV-Evergreen-352x264-01.png</shallowimg>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToUri</cmd>
+            <param>zune:VideoHomePage</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>Search Video</name>
+          <vui>
+            <visiblephrase>Search           Movies &amp; TV</visiblephrase>
+            <phrase>Search           Movies &amp; TV</phrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching Search           Movies &amp; TV...</message>
+          </vui>
+          <description>Search           Movies &amp; TV</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_search.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToUri</cmd>
+            <param>search:filter=XboxVideoItem</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>NewReleases</name>
+          <vui>
+            <visiblephrase>New Releases </visiblephrase>
+            <responsetype>Maintain</responsetype>
+            <message>Launching New Releases ...</message>
+          </vui>
+          <description>New Releases </description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>Common://ico_64x_newreleases.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToURI</cmd>
+            <param>zune:MovieHubPage?Id=fl_360newreleases_movies</param>
+            <param2>silver</param2>
+          </onclick>
+        </slot>
+      </slotgroup>
+    </channeldef>
+  </channel>
+  <channel>
+    <id>APPS</id>
+    <metadata>
+      <property>
+        <name>SearchContext</name>
+        <value>XboxAppItem</value>
+      </property>
+      <property>
+        <name>VuiContext</name>
+        <value>app</value>
+      </property>
+    </metadata>
+    <channeldef layouttemplate="epix://template18hd.xur">
+      <description>apps</description>
+      <type>online</type>
+      <vui>
+        <responsetype>Maintain</responsetype>
+        <message>Launching ...</message>
+      </vui>
+      <slotgroup>
+        <slot>
+          <name>A:Q:MyApps</name>
+          <description>My Apps</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_apps.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToUri</cmd>
+            <param>applibrary:_RootTitle=%slot_description%;</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>A:Q:NewReleases</name>
+          <description>New Releases</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>Common://ico_64x_newreleases.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToUri</cmd>
+            <param>appsmp:_RootTitle=%slot_description%;_Param=[SubscriptionLevel];_MethodName=Browse;_PageSize=25;orderBy=ReleaseDate;desiredMediaItemTypes=AppType;_SlotCount=200;</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>A:Q:MyVideoApp</name>
+          <vui>
+            <visiblephrase>Top Entertainment Apps</visiblephrase>
+          </vui>
+          <description>Top Entertainment Apps</description>
+          <rating>267242991</rating>
+          <shallowimg>http://compass.xboxlive.com/assets/66/c4/66c4e7f9-fa69-4459-8072-61753960c0aa.png?n=360-Apps-Evergreen-352x264-01.png</shallowimg>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToUri</cmd>
+            <param>appsmp:_RootTitle=%channel_description%;_Param=[SubscriptionLevel];_MethodName=Browse;_PageSize=25;orderBy=MostPopular;desiredMediaItemTypes=XboxApp;</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>A:Q:BrowseApps</name>
+          <description>Browse Apps</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_marketplace.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToUri</cmd>
+            <param>appsmp:_RootTitle=%channel_description%;_Param=[SubscriptionLevel];_MethodName=Browse;_PageSize=25;orderBy=MostPopular;desiredMediaItemTypes=XboxApp;</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>A:Q:SearchApps</name>
+          <description>Search Apps</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_search.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToUri</cmd>
+            <param>search:filter=XboxAppItem</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+    </channeldef>
+  </channel>
+  <channel>
+    <id>SETTINGS</id>
+    <channeldef layouttemplate="epix://template6hd.xur">
+      <description>settings</description>
+      <type>online</type>
+      <vui>
+        <phrase>settings</phrase>
+        <responsetype>Maintain</responsetype>
+        <message>Launching ...</message>
+      </vui>
+      <slotgroup>
+        <slot>
+          <name>System</name>
+          <vui>
+            <phrase>%EvResStr(IDS_SLOT_SETTINGS_SYSTEM_VUI_PRON)%</phrase>
+            <responsetype>RequestYesNo</responsetype>
+            <message>%EvResStr(IDS_SLOT_SETTINGS_SYSTEM_VUI_PRON)%</message>
+          </vui>
+          <description>%EvResStr(IDS_SLOT_SETTINGS_SYSTEM_VUI_DISPLAY)%</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_console.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToSettings</cmd>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>Profile (Disabled)</name>
+          <metadata>
+            <property>
+              <name>enabled</name>
+              <value>no</value>
+            </property>
+          </metadata>
+          <description>%EvResStr(IDS_SLOT_SETTINGS_PROFILE_VUI_DISPLAY)% </description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_pic.png</param>
+          </deepasset>
+          <condition>EcoLiveTier(none)</condition>
+        </slot>
+        <slot>
+          <name>Profile (Enabled)</name>
+          <vui>
+            <phrase>%EvResStr(IDS_SLOT_SETTINGS_PROFILE_VUI_PRON)%</phrase>
+            <responsetype>LaunchTitle</responsetype>
+            <message>%EvComResStr(IDS_CONTROLLER_REQUIRED_VUI_MESSAGE)%</message>
+          </vui>
+          <description>%EvResStr(IDS_SLOT_SETTINGS_PROFILE_VUI_DISPLAY)%</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_pic.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcShowGamerCard</cmd>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>Preferences</name>
+          <vui>
+            <phrase>%EvResStr(IDS_SLOT_SETTINGS_PREFERENCES_VUI_PRON)%</phrase>
+            <responsetype>RequestYesNo</responsetype>
+            <message>%EvComResStr(IDS_CONTROLLER_REQUIRED_VUI_MESSAGE)%</message>
+          </vui>
+          <description>%EvResStr(IDS_SLOT_SETTINGS_PREFERENCES_VUI_DISPLAY)%</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_settingspreferences.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcShowOptionsUI</cmd>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>Kinect (Enabled)</name>
+          <vui>
+            <phrase>%EvResStr(IDS_SLOT_SETTINGS_KINECTID_VUI_PRON)%</phrase>
+            <responsetype>RequestYesNo</responsetype>
+            <message>%EvComResStr(IDS_CONTROLLER_REQUIRED_VUI_MESSAGE)%</message>
+          </vui>
+          <description>%EvResStr(IDS_SLOT_SETTINGS_KINECTID_VUI_DISPLAY)%</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_kinect_device.png</param>
+          </deepasset>
+          <condition>EcoKinectAvailable()</condition>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToSceneInApp</cmd>
+            <param>consolesettings.xzp</param>
+            <param2>KinectSettings.xur</param2>
+          </onclick>
+        </slot>
+        <slot>
+          <name>Kinect (Disabled)</name>
+          <metadata>
+            <property>
+              <name>enabled</name>
+              <value>no</value>
+            </property>
+          </metadata>
+          <description>%EvResStr(IDS_SLOT_SETTINGS_KINECTID_VUI_DISPLAY)%</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_kinect_device.png</param>
+          </deepasset>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>Account (Disabled)</name>
+          <metadata>
+            <property>
+              <name>enabled</name>
+              <value>no</value>
+            </property>
+          </metadata>
+          <description>%EvResStr(IDS_SLOT_SETTINGS_ACCOUNT_VUI_DISPLAY)%</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_accountmanagement.png</param>
+          </deepasset>
+          <condition>EcoLiveTier(none)</condition>
+        </slot>
+        <slot>
+          <name>Account (Enabled)</name>
+          <vui>
+            <phrase>%EvResStr(IDS_SLOT_SETTINGS_ACCOUNT_VUI_PRON)%</phrase>
+            <responsetype>RequestYesNo</responsetype>
+            <message>%EvComResStr(IDS_CONTROLLER_REQUIRED_VUI_MESSAGE)%</message>
+          </vui>
+          <description>%EvResStr(IDS_SLOT_SETTINGS_ACCOUNT_VUI_DISPLAY)%</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_accountmanagement.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcAccountManagement</cmd>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>Privacy (Disabled)</name>
+          <vui>
+            <phrase>%EvResStr(IDS_SLOT_SETTINGS_ONLINESAFETY_VUI_PRON)%</phrase>
+          </vui>
+          <metadata>
+            <property>
+              <name>enabled</name>
+              <value>no</value>
+            </property>
+          </metadata>
+          <description>%EvResStr(IDS_SLOT_SETTINGS_ONLINESAFETY_VUI_DISPLAY)%</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_privacy.png</param>
+          </deepasset>
+          <condition>EcoLiveTier(none)</condition>
+        </slot>
+        <slot>
+          <name>Privacy (Enabled)</name>
+          <vui>
+            <phrase>%EvResStr(IDS_SLOT_SETTINGS_ONLINESAFETY_VUI_PRON)%</phrase>
+            <responsetype>RequestYesNo</responsetype>
+            <message>%EvComResStr(IDS_CONTROLLER_REQUIRED_VUI_MESSAGE)%</message>
+          </vui>
+          <metadata>
+            <property>
+              <name>autoid</name>
+              <value>settingsSlot_Privacy</value>
+            </property>
+          </metadata>
+          <description>%EvResStr(IDS_SLOT_SETTINGS_ONLINESAFETY_VUI_DISPLAY)%</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_privacy.png</param>
+          </deepasset>
+          <condition></condition>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToPamApp</cmd>
+            <param>dash.privacyui.xex</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>Settings-Family</name>
+          <vui>
+            <phrase>%EvResStr(IDS_SLOT_SETTINGS_FAMILY_VUI_PRON)%</phrase>
+            <responsetype>RequestYesNo</responsetype>
+            <message>%EvComResStr(IDS_CONTROLLER_REQUIRED_VUI_MESSAGE)%</message>
+          </vui>
+          <description>%EvResStr(IDS_SLOT_SETTINGS_FAMILY_VUI_DISPLAY)</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_family.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcNavToPamApp</cmd>
+            <param>dash.familycenter.xex</param>
+          </onclick>
+        </slot>
+      </slotgroup>
+      <slotgroup>
+        <slot>
+          <name>Turn Off</name>
+          <vui>
+            <phrase>%EvResStr(IDS_SLOT_SETTINGS_TURNOFF_VUI_PRON)%</phrase>
+            <responsetype>RequestYesNo</responsetype>
+            <message>%EvResStr(IDS_SLOT_SETTINGS_TURNOFF_VUI_MESSAGE)%</message>
+          </vui>
+          <description>%EvResStr(IDS_SLOT_SETTINGS_TURNOFF_VUI_DISPLAY)%</description>
+          <rating>267242991</rating>
+          <deepasset>
+            <format>EpixScene</format>
+            <path>EsLiveTile</path>
+            <param>common://ico_64x_turnoff.png</param>
+          </deepasset>
+          <onclick>
+            <button>A</button>
+            <helptext>Select</helptext>
+            <action>EpixCmd</action>
+            <cmd>EcShutdownConsole</cmd>
+          </onclick>
+        </slot>
+      </slotgroup>
+    </channeldef>
+  </channel>
+</manifest>

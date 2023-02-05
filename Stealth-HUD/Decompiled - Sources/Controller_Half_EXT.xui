@@ -1,0 +1,16 @@
+<XuiCanvas version="000c">
+<Properties>
+<Id>XuiCanvas</Id>
+<Width>96</Width>
+<Height>32</Height>
+</Properties><XuiScene>
+<Properties>
+<Id>XuiScene1</Id>
+</Properties>
+<XuiImage>
+<Properties>
+<Id>battery</Id>
+</Properties>
+</XuiImage>
+</XuiScene>
+</XuiCanvas>

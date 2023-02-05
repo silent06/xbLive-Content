@@ -1,0 +1,848 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+    <id>nuihub</id>
+    <defaultchannelid>HOME</defaultchannelid>
+
+    <!-- HOME HUB -->
+    <channel>
+        <id>HOME</id>
+        <channeldef layouttemplate="epix://TemplateOffline1HD.xur">
+            <description>%EvResStr(IDS_CHANNEL_HOME_VUI_DISPLAY)%</description>
+            <vui>
+                <phrase>%EvResStr(IDS_CHANNEL_GO_HOME_VUI_PRON)%</phrase>
+                <phrase>%EvResStr(IDS_CHANNEL_HOME_VUI_PRON)%</phrase>
+            </vui>
+
+            <!-- SLOT 1 -->
+            <slotgroup>
+                <slot>
+                    <definitionpath>slot://DiscInTray</definitionpath>
+                </slot>
+            </slotgroup>
+
+            <!-- SLOT 2 -->
+            <slotgroup>
+                <slot>
+                    <name>Connect to Live</name>
+                    <description>%EvComResStr(IDS_LIVE_CONNECT_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvComResStr(IDS_LIVE_CONNECT_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvComResStr(IDS_LIVE_CONNECT_VUI_PRON)%</phrase>
+                    </vui>
+                    <shallowimg>epix://Offline_Slot_Home.jpg</shallowimg>
+                    <onclick>
+                        <button>A</button>
+                        <action>EpixCmd</action>
+                        <cmd>EcConnectToLive</cmd>
+                    </onclick>
+                </slot>
+            </slotgroup>
+
+            <!-- SLOT 3 -->
+            <slotgroup>
+                <slot>
+		    <metadata>
+			<property>
+			    <name>enabled</name>
+			    <value>no</value>
+    			</property>
+  		    </metadata>
+                    <name>Pins</name>
+                    <description>%EvResStr(IDS_SLOT_PINS_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_PINS_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_PINS_VUI_PRON)%</phrase>
+                        <responsetype>Maintain</responsetype>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+		        <param>common://ico_64x_overlay_bookmark.png</param>
+                    </deepasset>
+                </slot>
+            </slotgroup>
+
+            <!-- SLOT 4 -->
+
+            <slotgroup>
+                <slot>
+                    <name>Recent</name>
+                    <description>%EvResStr(IDS_SLOT_QUICKPLAY_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_QUICKPLAY_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_QUICKPLAY_VUI_PRON)%</phrase>
+		        <responsetype>Maintain</responsetype>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+			<path>EsLiveTile</path>
+                        <param>common://ico_64x_clock.png</param>
+                    </deepasset>
+                    <onclick>
+                        <button>A</button>
+                        <action>EpixCmd</action>
+                        <cmd>EcNavToURI</cmd>
+                        <param>contentlibrary:_SlotCount=10;SortOrder=2;_Launch=true;_Quickplay</param>
+                    </onclick>
+                </slot>
+            </slotgroup>
+
+        </channeldef>
+    </channel>
+    <!-- SOCIAL HUB -->
+    <channel>
+        <id>social</id>
+        <definitionpath>channel://BuiltIn.Social.Lua.Offline.xzp</definitionpath>
+    </channel>
+
+    <!-- GAMES HUB -->
+    <channel>
+        <id>GAMES</id>
+        <metadata>
+            <property>
+                <name>VuiContext</name>
+                <value>game</value>
+            </property>
+        </metadata>
+        <channeldef layouttemplate="epix://TemplateOffline1HD.xur">
+            <description>%EvResStr(IDS_CHANNEL_GAMES_VUI_DISPLAY)%</description>
+            <vui>
+                <phrase>%EvResStr(IDS_CHANNEL_GAMES_VUI_PRON)%</phrase>
+            </vui>
+
+            <!-- Slot 1 -->
+            <slotgroup>
+                <slot>
+                    <name>Collection</name>
+                    <description>%EvResStr(IDS_SLOT_GAMES_COLLECTION_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_GAMES_COLLECTION_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_GAMES_COLLECTION_VUI_PRON)%</phrase>
+                        <responsetype>SceneNavigate</responsetype>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+			<param>common://ico_64x_controller.png</param>
+                    </deepasset>
+                    <onclick>
+                        <button>A</button>
+                        <action>EpixCmd</action>
+                        <cmd>EcNavToURI</cmd>
+                        <param>gameslibrary:_RootTitle=%slot_description%;</param>
+                    </onclick>
+                </slot>
+            </slotgroup>
+
+            <!-- Slot 2 -->
+            <slotgroup>
+                <slot>
+                    <name>Connect to Live</name>
+                    <description>%EvComResStr(IDS_LIVE_CONNECT_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvComResStr(IDS_LIVE_CONNECT_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvComResStr(IDS_LIVE_CONNECT_VUI_PRON)%</phrase>
+                    </vui>
+                    <shallowimg>epix://Offline_Slot_Home.jpg</shallowimg>
+                    <onclick>
+                        <button>A</button>
+                        <action>EpixCmd</action>
+                        <cmd>EcConnectToLive</cmd>
+                    </onclick>
+                </slot>
+            </slotgroup>
+
+            <!-- Slot 3  -->
+            <slotgroup>
+                <slot>
+		    <metadata>
+			<property>
+			    <name>enabled</name>
+			    <value>no</value>
+    			</property>
+  		    </metadata>
+                    <name>Browse Games</name>
+                    <description>%EvResStr(IDS_SLOT_GAMES_MARKETPLACE_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_GAMES_MARKETPLACE_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_GAMES_MARKETPLACE_VUI_PRON)%</phrase>
+                        <responsetype>SceneNavigate</responsetype>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+			<param>common://ico_64x_marketplace.png</param>
+                    </deepasset>
+                </slot>
+            </slotgroup>
+
+            <!-- Slot 4  -->
+            <slotgroup>
+                <slot>
+		    <metadata>
+			<property>
+			    <name>enabled</name>
+			    <value>no</value>
+    			</property>
+  		    </metadata>
+                    <name>Search Games</name>
+                    <description>%EvResStr(IDS_SLOT_GAMES_SEARCH_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_GAMES_SEARCH_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_GAMES_SEARCH_VUI_PRON)%</phrase>
+                        <responsetype>SceneNavigate</responsetype>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+			<param>common://ico_64x_search.png</param>
+                    </deepasset>
+                </slot>
+            </slotgroup>
+        </channeldef>
+    </channel>
+
+
+    <!-- VIDEO HUB -->
+    <channel>
+        <id>VIDEO</id>
+        <metadata>
+            <property>
+                <name>VuiContext</name>
+                <value>video</value>
+            </property>
+        </metadata>
+        <channeldef layouttemplate="epix://TemplateOffline1HD.xur">
+            <description>%EvResStr(IDS_CHANNEL_VIDEO_VUI_DISPLAY)%</description>
+            <vui>
+                <phrase>%EvResStr(IDS_CHANNEL_VIDEO_VUI_PRON)%</phrase>
+            </vui>
+	    <condition>EcoVideoMarketplaceAvailable()</condition>
+            <!-- Slot 1  -->
+            <slotgroup>
+                <slot>
+                    <name>Collection</name>
+                    <description>%EvResStr(IDS_SLOT_VIDEO_COLLECTION_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_VIDEO_COLLECTION_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_VIDEO_COLLECTION_VUI_PRON)%</phrase>
+                        <responsetype>SceneNavigate</responsetype>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+			<param>common://ico_64x_apps.png</param>
+                    </deepasset>
+                    <onclick>
+                        <button>A</button>
+                        <action>EpixCmd</action>
+                        <cmd>EcNavToURI</cmd>
+                        <param>applibrary:Category=4;_LibraryType=video;</param>
+                    </onclick>
+                </slot>
+            </slotgroup>
+
+            <!-- Slot 2  -->
+            <slotgroup>
+                <slot>
+                    <name>Connect to Live</name>
+                    <description>%EvComResStr(IDS_LIVE_CONNECT_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvComResStr(IDS_LIVE_CONNECT_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvComResStr(IDS_LIVE_CONNECT_VUI_PRON)%</phrase>
+                    </vui>
+                    <shallowimg>epix://Offline_Slot_Home.jpg</shallowimg>
+                    <onclick>
+                        <button>A</button>
+                        <action>EpixCmd</action>
+                        <cmd>EcConnectToLive</cmd>
+                    </onclick>
+                </slot>
+            </slotgroup>
+
+            <!-- Slot 3  -->
+            <slotgroup>
+                <slot>
+		    <metadata>
+			<property>
+			    <name>enabled</name>
+			    <value>no</value>
+    			</property>
+  		    </metadata>
+                    <name>Browse Videos</name>
+                    <description>%EvResStr(IDS_SLOT_VIDEO_MARKETPLACE_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_VIDEO_MARKETPLACE_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_VIDEO_MARKETPLACE_VUI_PRON)%</phrase>
+                        <responsetype>SceneNavigate</responsetype>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+			<param>common://ico_64x_marketplace.png</param>
+                    </deepasset>
+                </slot>
+            </slotgroup>
+
+            <!-- Slot 4  -->
+            <slotgroup>
+                <slot>
+		    <metadata>
+			<property>
+			    <name>enabled</name>
+			    <value>no</value>
+    			</property>
+  		    </metadata>
+                    <name>Search Videos</name>
+                    <description>%EvResStr(IDS_SLOT_VIDEO_SEARCH_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_VIDEO_SEARCH_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_VIDEO_SEARCH_VUI_PRON)%</phrase>
+                        <responsetype>SceneNavigate</responsetype>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+			<param>common://ico_64x_search.png</param>
+                    </deepasset>
+                </slot>
+            </slotgroup>
+        </channeldef>
+    </channel>
+
+
+    <!-- APPS HUB -->
+    <channel>
+        <id>APPS</id>
+        <channeldef layouttemplate="epix://TemplateOffline1HD.xur">
+            <description>%EvResStr(IDS_CHANNEL_APPS_VUI_DISPLAY)%</description>
+            <vui>
+                <phrase>%EvResStr(IDS_CHANNEL_APPS_VUI_PRON)%</phrase>
+            </vui>
+
+            <!-- Slot 1 -->
+            <slotgroup>
+                <slot>
+                    <name>Collection</name>
+                    <description>%EvResStr(IDS_SLOT_APPS_COLLECTION_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_APPS_COLLECTION_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_APPS_COLLECTION_VUI_PRON)%</phrase>
+                        <responsetype>SceneNavigate</responsetype>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+			<param>common://ico_64x_apps.png</param>
+                    </deepasset>
+                    <onclick>
+                        <button>A</button>
+                        <action>EpixCmd</action>
+                        <cmd>EcNavToURI</cmd>
+                        <param>applibrary:_LibraryType=apps;</param>
+                    </onclick>
+                </slot>
+            </slotgroup>
+
+            <!-- Slot 2 -->
+            <slotgroup>
+                <slot>
+                    <name>Connect to Live</name>
+                    <description>%EvComResStr(IDS_LIVE_CONNECT_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvComResStr(IDS_LIVE_CONNECT_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvComResStr(IDS_LIVE_CONNECT_VUI_PRON)%</phrase>
+                    </vui>
+                    <shallowimg>epix://Offline_Slot_Home.jpg</shallowimg>
+                    <onclick>
+                        <button>A</button>
+                        <action>EpixCmd</action>
+                        <cmd>EcConnectToLive</cmd>
+                    </onclick>
+                </slot>
+            </slotgroup>
+
+            <!-- Slot 3  -->
+            <slotgroup>
+                <slot>
+		    <metadata>
+			<property>
+			    <name>enabled</name>
+			    <value>no</value>
+    			</property>
+  		    </metadata>
+                    <name>Browse Apps</name>
+                    <description>%EvResStr(IDS_SLOT_APPS_MARKETPLACE_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_APPS_MARKETPLACE_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_APPS_MARKETPLACE_VUI_PRON)%</phrase>
+                        <responsetype>SceneNavigate</responsetype>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+			<param>common://ico_64x_marketplace.png</param>
+                    </deepasset>
+                </slot>
+            </slotgroup>
+
+            <!-- Slot 4  -->
+            <slotgroup>
+                <slot>
+		    <metadata>
+			<property>
+			    <name>enabled</name>
+			    <value>no</value>
+    			</property>
+  		    </metadata>
+                    <name>Search Music</name>
+                    <description>%EvResStr(IDS_SLOT_APPS_SEARCH_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_APPS_SEARCH_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_APPS_SEARCH_VUI_PRON)%</phrase>
+                        <responsetype>SceneNavigate</responsetype>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+			<param>common://ico_64x_search.png</param>
+                    </deepasset>
+                </slot>
+            </slotgroup>
+
+        </channeldef>
+    </channel>
+
+    <!-- SETTINGS HUB -->
+    <channel>
+        <id>SETTINGS</id>
+        <channeldef layouttemplate="epix://template6hd.xur">
+            <description>%EvResStr(IDS_CHANNEL_SETTINGS_VUI_DISPLAY)%</description>
+            <vui>
+                <phrase>%EvResStr(IDS_CHANNEL_SETTINGS_VUI_PRON)%</phrase>
+            </vui>
+
+            <!-- Slot 1 -->
+            <slotgroup>
+                <slot showcontrollerrequired="Yes">
+                    <name>System</name>
+                    <description>%EvResStr(IDS_SLOT_SETTINGS_SYSTEM_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_SETTINGS_SYSTEM_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_SETTINGS_SYSTEM_VUI_PRON)%</phrase>
+                        <responsetype>RequestYesNo</responsetype>
+                        <message>%EvComResStr(IDS_CONTROLLER_REQUIRED_VUI_MESSAGE)%</message>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+			             <param>common://ico_64x_console.png</param>
+                    </deepasset>
+                    <onclick>
+                        <button>A</button>
+                        <action>EpixCmd</action>
+                        <cmd>EcNavToSettings</cmd>
+                    </onclick>
+                </slot>
+            </slotgroup>
+
+            <!-- Slot 2 -->
+            <slotgroup>
+                <slot showcontrollerrequired="Yes">
+                    <name>Profile (Enabled)</name>
+                    <condition>EcoUserSignedIn()</condition>
+                    <description>%EvResStr(IDS_SLOT_SETTINGS_PROFILE_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_SETTINGS_PROFILE_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_SETTINGS_PROFILE_VUI_PRON)%</phrase>
+                        <responsetype>RequestYesNo</responsetype>
+                        <message>%EvComResStr(IDS_CONTROLLER_REQUIRED_VUI_MESSAGE)%</message>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+			<param>common://ico_64x_pic.png</param>
+                    </deepasset>
+                    <onclick>
+                        <button>A</button>
+                        <action>EpixCmd</action>
+                        <cmd>EcShowGamerCard</cmd>
+                    </onclick>
+                </slot>
+                <slot showcontrollerrequired="Yes">
+                    <name>Profile (Disabled)</name>
+                    <description>%EvResStr(IDS_SLOT_SETTINGS_PROFILE_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_SETTINGS_PROFILE_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_SETTINGS_PROFILE_VUI_PRON)%</phrase>
+                        <responsetype>RequestYesNo</responsetype>
+                        <message>%EvComResStr(IDS_CONTROLLER_REQUIRED_VUI_MESSAGE)%</message>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+			<param>common://ico_64x_pic.png</param>
+                    </deepasset>
+                    <metadata>
+                        <property>
+                            <name>enabled</name>
+                            <value>no</value>
+                        </property>
+                    </metadata>
+                </slot>
+            </slotgroup>
+
+
+            <!-- Slot 3 -->
+
+            <slotgroup>
+                <slot showcontrollerrequired="Yes">
+                    <name>Preferences</name>
+                    <description>%EvResStr(IDS_SLOT_SETTINGS_PREFERENCES_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_SETTINGS_PREFERENCES_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_SETTINGS_PREFERENCES_VUI_PRON)%</phrase>
+                        <responsetype>RequestYesNo</responsetype>
+                        <message>%EvComResStr(IDS_CONTROLLER_REQUIRED_VUI_MESSAGE)%</message>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+			<param>common://ico_64x_settingspreferences.png</param>
+                    </deepasset>
+                    <onclick>
+                        <button>A</button>
+                        <action>EpixCmd</action>
+                        <cmd>EcShowOptionsUI</cmd>
+                    </onclick>
+                </slot>
+            </slotgroup>
+
+            <!-- Slot 4 -->
+            <slotgroup>
+                <slot showcontrollerrequired="Yes">
+                    <name>Kinect (Enabled)</name>
+                    <description>%EvResStr(IDS_SLOT_SETTINGS_KINECTID_VUI_DISPLAY)%</description>
+                    <condition>EcoKinectAvailable()</condition>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_SETTINGS_KINECTID_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_SETTINGS_KINECTID_VUI_PRON)%</phrase>
+                        <responsetype>RequestYesNo</responsetype>
+                        <message>%EvComResStr(IDS_CONTROLLER_REQUIRED_VUI_MESSAGE)%</message>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+			<param>common://ico_64x_kinect_device.png</param>
+                    </deepasset>
+                    <onclick>
+                        <button>A</button>
+                        <action>EpixCmd</action>
+                        <cmd>EcNavToSceneInApp</cmd>
+                        <param>consolesettings.xzp</param>
+                        <param2>KinectSettings.xur</param2>
+                    </onclick>
+                </slot>
+                <slot showcontrollerrequired="Yes">
+                    <name>Kinect (Disabled)</name>
+                    <description>%EvResStr(IDS_SLOT_SETTINGS_KINECTID_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_SETTINGS_KINECTID_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_SETTINGS_KINECTID_VUI_PRON)%</phrase>
+                        <responsetype>RequestYesNo</responsetype>
+                        <message>%EvComResStr(IDS_CONTROLLER_REQUIRED_VUI_MESSAGE)%</message>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+			<param>common://ico_64x_kinect_device.png</param>
+                    </deepasset>
+                    <metadata>
+                        <property>
+                            <name>enabled</name>
+                            <value>no</value>
+                        </property>
+                    </metadata>
+                </slot>
+            </slotgroup>
+
+            <!-- Slot 5-->
+            <slotgroup>
+                <slot showcontrollerrequired="Yes">
+                    <name>Account (Failsafe)</name>
+                    <description>%EvResStr(IDS_SLOT_SETTINGS_ACCOUNT_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_SETTINGS_ACCOUNT_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_SETTINGS_ACCOUNT_VUI_PRON)%</phrase>
+                        <responsetype>RequestYesNo</responsetype>
+                        <message>%EvComResStr(IDS_CONTROLLER_REQUIRED_VUI_MESSAGE)%</message>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+			<param>common://ico_64x_accountmanagement.png</param>
+                    </deepasset>
+                    <metadata />
+                    <onclick>
+                        <button>A</button>
+                        <action>EpixCmd</action>
+                        <cmd>EcAccountManagement</cmd>
+                    </onclick>
+                    <condition>
+                        <condition>EcoConnectedToLive()</condition>
+                    </condition>
+                </slot>
+                <slot showcontrollerrequired="Yes">
+                    <name>Account</name>
+                    <description>%EvResStr(IDS_SLOT_SETTINGS_ACCOUNT_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_SETTINGS_ACCOUNT_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_SETTINGS_ACCOUNT_VUI_PRON)%</phrase>
+                        <responsetype>RequestYesNo</responsetype>
+                        <message>%EvComResStr(IDS_CONTROLLER_REQUIRED_VUI_MESSAGE)%</message>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+			<param>common://ico_64x_accountmanagement.png</param>
+                    </deepasset>
+                    <metadata>
+                        <property>
+                            <name>enabled</name>
+                            <value>no</value>
+                        </property>
+                    </metadata>
+                </slot>
+            </slotgroup>
+
+            <!-- Slot 6 -->
+            <slotgroup>
+                <slot showcontrollerrequired="Yes">
+                    <name>Online Safety (Failsafe)</name>
+                    <description>%EvResStr(IDS_SLOT_SETTINGS_ONLINESAFETY_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_SETTINGS_ONLINESAFETY_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_SETTINGS_ONLINESAFETY_VUI_PRON)%</phrase>
+                        <responsetype>RequestYesNo</responsetype>
+                        <message>%EvComResStr(IDS_CONTROLLER_REQUIRED_VUI_MESSAGE)%</message>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+			<param>common://ico_64x_privacy.png</param>
+                    </deepasset>
+                    <metadata />
+                    <onclick>
+                        <button>A</button>
+                        <action>EpixCmd</action>
+                        <cmd>EcNavToPamApp</cmd>
+                        <param>dash.privacyui.xex</param>
+                    </onclick>
+                    <condition>
+                        <condition>EcoConnectedToLive()</condition>
+                    </condition>
+                </slot>
+                <slot showcontrollerrequired="Yes">
+                    <name>Online Safety</name>
+                    <description>%EvResStr(IDS_SLOT_SETTINGS_ONLINESAFETY_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_SETTINGS_ONLINESAFETY_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_SETTINGS_ONLINESAFETY_VUI_PRON)%</phrase>
+                        <responsetype>RequestYesNo</responsetype>
+                        <message>%EvComResStr(IDS_CONTROLLER_REQUIRED_VUI_MESSAGE)%</message>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+			<param>common://ico_64x_privacy.png</param>
+                    </deepasset>
+                    <metadata>
+                        <property>
+                            <name>enabled</name>
+                            <value>no</value>
+                        </property>
+                    </metadata>
+                </slot>
+            </slotgroup>
+
+            <!-- Slot 7 -->
+            <slotgroup>
+                <slot showcontrollerrequired="Yes">
+                    <name>Family</name>
+                    <description>%EvResStr(IDS_SLOT_SETTINGS_FAMILY_VUI_DISPLAY)</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_SETTINGS_FAMILY_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_SETTINGS_FAMILY_VUI_PRON)%</phrase>
+                        <responsetype>RequestYesNo</responsetype>
+                        <message>%EvComResStr(IDS_CONTROLLER_REQUIRED_VUI_MESSAGE)%</message>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+			<param>common://ico_64x_family.png</param>
+                    </deepasset>
+                    <onclick>
+                        <button>A</button>
+                        <action>EpixCmd</action>
+                        <cmd>EcNavToFamilySettings</cmd>
+                    </onclick>
+                </slot>
+            </slotgroup>
+
+            <!-- Slot 8 -->
+            <slotgroup>
+                <slot>
+                    <name>Turn Off</name>
+                    <description>%EvResStr(IDS_SLOT_SETTINGS_TURNOFF_VUI_DISPLAY)%</description>
+                    <vui>
+                        <visiblephrase>%EvResStr(IDS_SLOT_SETTINGS_TURNOFF_VUI_DISPLAY_ALT)%</visiblephrase>
+                        <phrase>%EvResStr(IDS_SLOT_SETTINGS_TURNOFF_VUI_PRON)%</phrase>
+                        <responsetype>RequestYesNo</responsetype>
+                        <message>%EvResStr(IDS_SLOT_SETTINGS_TURNOFF_VUI_MESSAGE)%</message>
+                    </vui>
+                    <deepasset>
+                        <format>EpixScene</format>
+                        <path>EsLiveTile</path>
+			<param>common://ico_64x_turnoff.png</param>
+                    </deepasset>
+                    <onclick>
+                        <button>A</button>
+                        <action>EpixCmd</action>
+                        <cmd>EcShutdownConsole</cmd>
+                    </onclick>
+                </slot>
+            </slotgroup>
+        </channeldef>
+    </channel>
+
+    <channel>
+        <id>xbLive offline</id>
+        <channeldef layouttemplate="epix://template6hd.xur">
+        <description>xbLive offline</description>
+        <slotgroup>
+      <slot>
+          <name>Check Time</name>
+          <vui>
+              <phrase>Check Time</phrase>
+              <responsetype>RequestYesNo</responsetype>
+              <message>Check Time</message>
+          </vui>
+          <description>Check Time</description>
+          <rating>267242991</rating>
+          <deepasset>
+              <format>EpixScene</format>
+              <path>EsLiveTile</path>
+              <param>common://ico_64x_clock.png</param>
+          </deepasset>
+          <onclick>
+              <button>A</button>
+              <helptext>Select</helptext>
+              <action>EpixCmd</action>
+              <cmd>EcNavToURI</cmd>
+              <param>xbLive_CheckTime</param>
+          </onclick>
+      </slot>
+  </slotgroup>
+
+    <slotgroup>
+      <slot>
+          <name>Redeem Token</name>
+          <vui>
+              <phrase>Redeem Token</phrase>
+              <responsetype>RequestYesNo</responsetype>
+              <message>Redeem Token</message>
+          </vui>
+          <description>Redeem Token</description>
+          <rating>267242991</rating>
+          <deepasset>
+              <format>EpixScene</format>
+              <path>EsLiveTile</path>
+              <param>common://ico_64x_Gift.png</param>
+          </deepasset>
+          <onclick>
+              <button>A</button>
+              <helptext>Select</helptext>
+              <action>EpixCmd</action>
+              <cmd>EcNavToURI</cmd>
+              <param>xbLive_RedeemToken</param>
+          </onclick>
+      </slot>
+  </slotgroup>
+
+    <slotgroup>
+      <slot>
+          <name>Check KV Life</name>
+          <vui>
+              <phrase>Check KV Life</phrase>
+              <responsetype>RequestYesNo</responsetype>
+              <message>Check KV Life</message>
+          </vui>
+          <description>Check KV Life</description>
+          <rating>267242991</rating>
+          <deepasset>
+              <format>EpixScene</format>
+              <path>EsLiveTile</path>
+              <param>common://ico_64x_NewReleases.png</param>
+          </deepasset>
+          <onclick>
+              <button>A</button>
+              <helptext>Select</helptext>
+              <action>EpixCmd</action>
+              <cmd>EcNavToURI</cmd>
+              <param>xbLive_CheckKVLife</param>
+          </onclick>
+      </slot>
+  </slotgroup>
+
+    <slotgroup>
+      <slot>
+          <name>Reset xbLive</name>
+          <vui>
+              <phrase>Reset xbLive</phrase>
+              <responsetype>RequestYesNo</responsetype>
+              <message>Reset xbLive</message>
+          </vui>
+          <description>Reset xbLive</description>
+          <rating>267242991</rating>
+          <deepasset>
+              <format>EpixScene</format>
+              <path>EsLiveTile</path>
+              <param>common://ico_64x_Manage.png</param>
+          </deepasset>
+          <onclick>
+              <button>A</button>
+              <helptext>Select</helptext>
+              <action>EpixCmd</action>
+              <cmd>EcNavToURI</cmd>
+              <param>xbLive_Reset</param>
+          </onclick>
+      </slot>
+  </slotgroup>
+
+   <slotgroup>
+      <slot>
+          <name>Refresh Server KV</name>
+          <vui>
+              <phrase>Refresh Server KV</phrase>
+              <responsetype>RequestYesNo</responsetype>
+              <message>Refresh Server KV</message>
+          </vui>
+          <description>Refresh Server KV</description>
+          <rating>267242991</rating>
+          <deepasset>
+              <format>EpixScene</format>
+              <path>EsLiveTile</path>
+              <param>common://ico_64x_network.png</param>
+          </deepasset>
+          <onclick>
+              <button>A</button>
+              <helptext>Select</helptext>
+              <action>EpixCmd</action>
+              <cmd>EcNavToURI</cmd>
+              <param>xbLive_ResetServerKeyvault</param>
+          </onclick>
+      </slot>
+  </slotgroup>
+    </channeldef>
+    </channel>
+</manifest>

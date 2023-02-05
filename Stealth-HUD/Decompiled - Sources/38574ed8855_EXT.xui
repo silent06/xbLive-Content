@@ -1,0 +1,16 @@
+<XuiCanvas version="000c">
+<Properties>
+<Id>XuiCanvas</Id>
+<Width>640</Width>
+<Height>480</Height>
+</Properties><XuiScene>
+<Properties>
+<Id>XuiScene1</Id>
+</Properties>
+<XuiControl>
+<Properties>
+<Id>PopupControl</Id>
+</Properties>
+</XuiControl>
+</XuiScene>
+</XuiCanvas>

